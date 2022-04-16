@@ -12,4 +12,6 @@
 
 uint16_t RotateBit(uint16_t digit, uint32_t n, uint8_t rigth);
 
+float mySqrt(float x);
+
 #endif /* bit_tricks_h */
