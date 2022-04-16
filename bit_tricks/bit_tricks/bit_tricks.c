@@ -62,3 +62,22 @@ float mySqrt(float x)
 
     return ((square*square) > x) ? square - 1: square;
 }
+
+/* Reverse bit implmentation
+ 
+ */
+
+#define SIZE_INT (sizeof(uint32_t)*8)
+
+uint32_t ReverseBits(uint32_t number)
+{
+    uint32_t ReverseNumber = 0;
+    
+    for(uint32_t ii = 0; ii < SIZE_INT; ii++)
+    {
+        ReverseNumber = (ReverseNumber << 1) | (number & 0x01);
+        number = number >> 1;
+    }
+    
+    return ReverseNumber;
+}
