@@ -8,22 +8,22 @@
 #include "bit_tricks.h"
 #include <stdint.h>
 
-#define SHORT_SIZE1 sizeof(uint16_t)*8
+#define SHORT_SIZE (sizeof(uint16_t)*8)
 
 uint16_t RotateBit(uint16_t digit, uint32_t n, uint8_t rigth)
 {
     uint8_t LocalShift = 0;
     uint16_t RetVal = 0;
     
-    LocalShift = n%16;
-    
+    LocalShift = n % SHORT_SIZE;
+     
     if(rigth)
     {
-        RetVal =  (digit << LocalShift | (digit >> (SHORT_SIZE1 - LocalShift)));
+        RetVal =  (digit << LocalShift | (digit >> (SHORT_SIZE - LocalShift)));
     }
     else
     {
-        RetVal =  (digit >> LocalShift | (digit << (SHORT_SIZE1 - LocalShift)));
+        RetVal =  (digit >> LocalShift | (digit << (SHORT_SIZE - LocalShift)));
     }
     
     return RetVal;

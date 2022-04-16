@@ -16,8 +16,8 @@ int main(int argc, const char * argv[]) {
     printf("Hola mundirijillo!\n");
     
     
-    // rota bit
-    #define POS_SHIFTHED 8
+    // rota bit	
+    #define POS_SHIFTHED 24
     #define RIGHT ON
     uint16_t var = 0xABCD;
     printf("variable: %x  \n", var);
