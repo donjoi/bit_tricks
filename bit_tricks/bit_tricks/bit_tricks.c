@@ -82,6 +82,11 @@ uint32_t ReverseBits(uint32_t number)
     return ReverseNumber;
 }
 
+
+/* swaping values from two vars not using a temporal variable to store the value
+ only using xor bitwise operation
+ */
+
 void SwapVars(uint8_t* a,uint8_t* b)
 {
     *a ^= (*b);
@@ -89,6 +94,8 @@ void SwapVars(uint8_t* a,uint8_t* b)
     *a ^= (*b);
 }
 
+/*  decimal to hexadecimal converter
+ */
 
 void Dec2Hex(char* string, uint32_t number)
 {
