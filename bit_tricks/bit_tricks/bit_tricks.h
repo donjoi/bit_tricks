@@ -16,4 +16,8 @@ float mySqrt(float x);
 
 uint32_t ReverseBits(uint32_t number);
 
+void SwapVars(uint8_t* a,uint8_t* b);
+
+void Dec2Hex(char* string, uint32_t number);
+
 #endif /* bit_tricks_h */

@@ -81,3 +81,24 @@ uint32_t ReverseBits(uint32_t number)
     
     return ReverseNumber;
 }
+
+void SwapVars(uint8_t* a,uint8_t* b)
+{
+    *a ^= (*b);
+    *b ^= (*a);
+    *a ^= (*b);
+}
+
+
+void Dec2Hex(char* string, uint32_t number)
+{
+    uint8_t digit = 0;
+    uint8_t ii = 0;
+    
+    for(; number; number/=16)
+    {
+        digit = number % 16;
+        string[ii++] = (digit >= 0 && digit <= 9) ? digit + '0' : digit + ('a' - 10);
+    }
+    string[ii] = '\n';
+}
