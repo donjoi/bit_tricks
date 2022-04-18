@@ -109,3 +109,36 @@ void Dec2Hex(char* string, uint32_t number)
     }
     string[ii] = '\n';
 }
+
+#include <stdlib.h>
+
+char * toHex(int num){
+    
+    char digit = 0;
+    char *ptr;
+    unsigned int localNum = num;
+    long int var = num;
+    
+    ptr = (char*)calloc(16,sizeof(char)) + 7;
+    
+    localNum = (unsigned int)((num >= 0) ? var : ((var)*(-1)));
+    
+    if(localNum == 0)
+    {
+        *ptr = '0';
+        return ptr;
+    }
+    
+    /// Two's complement
+    if(num < 0) localNum = (~localNum) + 1;
+    
+    /// decimal to hex converter
+    for(; localNum; localNum/=16)
+    {
+        digit = localNum % 16;
+        *(ptr--) = (digit <= 9) ? digit + '0' : digit + ('a' -10);
+    }
+    ptr++;
+    
+    return ptr;
+}

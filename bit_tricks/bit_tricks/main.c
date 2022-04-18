@@ -16,7 +16,7 @@
 #define SQUARE_ROOT OFF
 #define REVERSE_BITS OFF
 #define SWAP_VARS OFF
-#define DEC2HEX ON
+#define DEC2HEX OFF
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]) {
     
 #if DEC2HEX
     char string[10];
-    uint32_t number = 200;
+    uint32_t number = 26;
     
     Dec2Hex(string, number);
     
